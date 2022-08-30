@@ -1,15 +1,12 @@
 const puppeteer = require('puppeteer');
+const cheerio = require('cheerio');
 
-async function navigate() {
-    await page.type('input#appFltrFld', 'Leave Status', {delay: 1000})
-}
-
-async function login() {
+(async () => {
   try {
     const { url, username, password, system_id } = require('./config');
 
     console.log(url, username, password, system_id);
-    const browser = await puppeteer.launch({headless: false, devtools: true})
+    const browser = await puppeteer.launch({ headless: false, devtools: true })
     const page = await browser.newPage()
 
     await page.goto(url)
@@ -19,15 +16,20 @@ async function login() {
     await page.type('input#DATABASE', system_id)
 
     await Promise.all([
-        page.click('input#loginBtn'),
-        page.waitForNavigation(),
+      page.click('input#loginBtn'),
+      page.waitForNavigation(),
     ]);
 
-    navigate()
+    //getting access to the raw HTML
+    const pageData = await page.evaluate(() => {
+      return {
+        html: document.documentElement.innerHTML,
+      };
+    });
 
+    // await browser.close()
+    console.log(pageData.html);
   } catch (error) {
-      console.error(error)
+    console.error(error)
   }
-}
-
-login()
+})();
