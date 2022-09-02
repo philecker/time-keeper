@@ -5,7 +5,6 @@ const cheerio = require('cheerio');
   try {
     const { url, username, password, system_id } = require('./config');
 
-    console.log(url, username, password, system_id);
     const browser = await puppeteer.launch({ headless: false, devtools: true })
     const page = await browser.newPage()
 
@@ -20,15 +19,16 @@ const cheerio = require('cheerio');
       page.waitForNavigation(),
     ]);
 
-    //getting access to the raw HTML
-    const pageData = await page.evaluate(() => {
-      return {
-        html: document.documentElement.innerHTML,
-      };
-    });
+    // //getting access to the raw HTML
+    // const pageData = await page.evaluate(() => {
+    //   // return {
+    //   //   html: document.documentElement.innerHTML,
+    //   // };
+    //   page.type('input#appFltrFld', "Something")
+    // });
 
-    // await browser.close()
-    console.log(pageData.html);
+    // // await browser.close()
+    // console.log(pageData.html);
   } catch (error) {
     console.error(error)
   }
