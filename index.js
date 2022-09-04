@@ -1,13 +1,14 @@
 const puppeteer = require('puppeteer');
-const cheerio = require('cheerio');
 
 (async () => {
   try {
+    // Define .env variables
     const { url, username, password, system_id } = require('./config');
 
-    const browser = await puppeteer.launch({ headless: false, devtools: true })
+    // Open new browswer and set timeout
+    const browser = await puppeteer.launch({ headless: true, devtools: false })
     const page = await browser.newPage()
-    await page.setDefaultNavigationTimeout(0);
+    page.setDefaultNavigationTimeout(0);
 
     await page.goto(url)
 
@@ -20,23 +21,24 @@ const cheerio = require('cheerio');
       page.waitForNavigation()
     ]);
 
+    // await navigating to Leave Status page
     await page.click('#goToLbl', { delay: 10000 })
     await page.click('#bus__PE', { delay: 10000 })
     await page.click('#dpt__ES', { delay: 10000 })
     await page.click('#wrk__PayrollandBenefits', { delay: 10000 })
     await page.click('#actvty__ESQLVSTAT', { delay: 10000 })
 
-    await page.waitForNavigation()
+    // await Leave Status input
+    await page.waitForSelector('#CURRENT_BAL-_0_E')
 
-    // //getting access to the raw HTML
-    // const pageData = await page.evaluate(() => {
-    //   return {
-    //     html: document.documentElement.innerHTML,
-    //   };
-    // });
+    // Access to the raw HTML for input
+    const leaveStatus = await page.evaluate(() => {
+      return {
+        html: document.getElementById('CURRENT_BAL-_0_E').value
+      };
+    });
 
-    // await browser.close()
-    alert(document.documentElement.innerHTML);
+    console.log(leaveStatus.html)
   } catch (error) {
     console.error(error)
   }
