@@ -1,18 +1,13 @@
 # Keeper
 
 A simple app used to login to Deltek and scrap PTO time without needing to login.
-Currently, it needs improvements but will continue to update this project.
-
-## Description
-
-An in-depth paragraph about your project and overview of use.
 
 ## Getting Started
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+* Node.js
+* Puppeteer
 
 ### Installing
 
