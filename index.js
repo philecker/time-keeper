@@ -6,7 +6,11 @@ const puppeteer = require('puppeteer');
     const { url, username, password, system_id } = require('./config');
 
     // Open new browswer and set timeout
-    const browser = await puppeteer.launch({ headless: true, devtools: false })
+    const browser = await puppeteer.launch({
+      headless: true,
+      devtools: false
+    })
+
     const page = await browser.newPage()
     page.setDefaultNavigationTimeout(0);
 
@@ -23,10 +27,10 @@ const puppeteer = require('puppeteer');
 
     // await navigating to Leave Status page
     await page.click('#goToLbl', { delay: 10000 })
-    await page.click('#bus__PE', { delay: 10000 })
-    await page.click('#dpt__ES', { delay: 10000 })
-    await page.click('#wrk__PayrollandBenefits', { delay: 10000 })
-    await page.click('#actvty__ESQLVSTAT', { delay: 10000 })
+    await page.click('#bus__PE', { delay: 5000 })
+    await page.click('#dpt__ES', { delay: 5000 })
+    await page.click('#wrk__PayrollandBenefits', { delay: 5000 })
+    await page.click('#actvty__ESQLVSTAT', { delay: 5000 })
 
     // await Leave Status input
     await page.waitForSelector('#CURRENT_BAL-_0_E')
