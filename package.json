@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
   "keywords": [],
   "author": "",
@@ -15,5 +15,8 @@
     "puppeteer": "16.2.0",
     "request": "2.88.2",
     "request-promise": "4.2.6"
+  },
+  "devDependencies": {
+    "electron": "^21.1.0"
   }
 }

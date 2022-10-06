@@ -45,7 +45,7 @@ const puppeteer = require('puppeteer');
 
     // Open new browswer and set timeout
     const browser = await puppeteer.launch({
-      headless: true,
+      headless: false,
       devtools: false,
       args: minimal_args
     })
