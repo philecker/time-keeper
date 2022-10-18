@@ -12,6 +12,7 @@
   "dependencies": {
     "cheerio": "1.0.0-rc.12",
     "dotenv": "16.0.1",
+    "electron-store": "^8.1.0",
     "puppeteer": "16.2.0",
     "request": "2.88.2",
     "request-promise": "4.2.6"

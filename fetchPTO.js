@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+const Store = require('electron-store');
 
 (async () => {
   try {
@@ -45,7 +46,7 @@ const puppeteer = require('puppeteer');
 
     // Open new browswer and set timeout
     const browser = await puppeteer.launch({
-      headless: false,
+      headless: true,
       devtools: false,
       args: minimal_args
     })
