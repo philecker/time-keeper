@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-const Store = require('electron-store');
+// const Store = require('electron-store');
 
 (async () => {
   try {
@@ -66,11 +66,31 @@ const Store = require('electron-store');
     ]);
 
     // await navigating to Leave Status page
-    await page.click('#goToLbl', { delay: 5000 })
-    await page.click('#bus__PE', { delay: 2500 })
-    await page.click('#dpt__ES', { delay: 2500 })
-    await page.click('#wrk__PayrollandBenefits', { delay: 2500 })
-    await page.click('#actvty__ESQLVSTAT', { delay: 2500 })
+
+    // Wait for
+    const goToLbl = '#goToLbl';
+    await page.waitForSelector(goToLbl);
+    await page.click(goToLbl);
+
+    // Wait for
+    const bus__PE = '#bus__PE';
+    await page.waitForSelector(bus__PE);
+    await page.click(bus__PE);
+
+    // Wait for
+    const dpt__ES = '#dpt__ES';
+    await page.waitForSelector(dpt__ES);
+    await page.click(dpt__ES);
+
+    // Wait for
+    const wrk__PayrollandBenefits = '#wrk__PayrollandBenefits';
+    await page.waitForSelector(wrk__PayrollandBenefits);
+    await page.click(wrk__PayrollandBenefits);
+
+    // Wait for
+    const actvty__ESQLVSTAT = '#actvty__ESQLVSTAT';
+    await page.waitForSelector(actvty__ESQLVSTAT);
+    await page.click(actvty__ESQLVSTAT);
 
     // await Leave Status input
     await page.waitForSelector('#CURRENT_BAL-_0_E')
