@@ -1,59 +1,34 @@
 # Time Keeper
 
-This is a Node.js script that uses the Puppeteer library to automate a web browser. It logs into a website using a username, password, and system ID provided in a configuration file, navigates to a "Leave Status" page, and extracts the value of a particular HTML input field.
+This is a Node.js script that uses the Puppeteer library to automate a web browser and extract the value of a particular HTML input field for Leave Status. The script logs into a website using a username, password, and system ID provided in a configuration file, navigates to a "Leave Status" page, and extracts the value of a particular HTML input field.
 
-The script first imports the necessary libraries and reads in the required variables from a configuration file. It then sets up an array of command line arguments to pass to the Puppeteer browser instance to reduce memory usage and improve performance.
+## Requirements
+Node.js (v10 or later)
+npm or yarn
+Installation
+Clone the repository to your local machine.
+Open a terminal and navigate to the project folder.
+Run npm install or yarn install to install the project dependencies.
+## Usage
+Open the config.js file and replace the sample credentials with your actual login details.
+Run the command node index.js to start the script.
+The script will navigate to the Leave Status page and extract the value of a particular HTML input field.
+The extracted value will be printed to the console.
+Configuration
+The config.js file contains the following configuration options:
 
-The script launches a headless browser instance with the minimal arguments and sets the default navigation timeout to 0 to ensure that the script doesn't timeout during navigation. It then navigates to the provided URL and logs in using the provided credentials.
+username: The username for logging into the website.
+password: The password for logging into the website.
+url: The URL of the website to scrape.
+system_id: The system ID for the website.
+## Customization
+If you want to extract a different value from the website, you will need to modify the script accordingly. You can do this by updating the CSS selector used to find the HTML input field and updating the code that extracts the value from the input field.
 
-After logging in, the script navigates to the "Leave Status" page by clicking on a series of elements on the page. Once on the "Leave Status" page, it waits for a particular HTML input field to appear and extracts its value using page.evaluate().
+## Troubleshooting
+If you encounter any issues while running the script, please check the following:
 
-Finally, the script logs the value of the HTML input field to the console and catches any errors that may occur during the script's execution.
-
-## Getting Started
-
-### Dependencies
-
-* Node.js
-* Puppeteer
-
-### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
-
-### Executing program
-
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
-
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-<!-- Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46) -->
+Ensure that you have provided valid login credentials in the config.js file.
+Ensure that the website you are trying to scrape is accessible and that the URL is correct.
+Ensure that you have installed all the required dependencies by running npm install or yarn install.
+## Disclaimer
+This script is provided as-is, without any warranty or guarantee of its performance or suitability for any specific purpose. The use of this script is entirely at your own risk. Please ensure that you have the necessary permissions to access and scrape the website before running this script.
