@@ -1,24 +1,23 @@
 {
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "puppeteer": "^20.2.0"
+  },
   "name": "time-keeper",
   "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
+  "main": "fetchPTO.js",
   "scripts": {
-    "start": "electron ."
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philecker/time-keeper.git"
+  },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "cheerio": "1.0.0-rc.12",
-    "dotenv": "16.0.3",
-    "electron-store": "8.1.0",
-    "menubar": "9.2.3",
-    "puppeteer": "19.5.2",
-    "request": "2.88.2",
-    "request-promise": "4.2.6"
+  "bugs": {
+    "url": "https://github.com/philecker/time-keeper/issues"
   },
-  "devDependencies": {
-    "electron": "^21.1.0"
-  }
+  "homepage": "https://github.com/philecker/time-keeper#readme",
+  "description": ""
 }
