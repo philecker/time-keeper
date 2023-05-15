@@ -41,14 +41,14 @@ const puppeteer = require('puppeteer');
       '--no-zygote',
       '--password-store=basic',
       '--use-gl=swiftshader',
-      '--use-mock-keychain',
+      '--use-mock-keychain'
     ];
 
     // Open new browswer and set timeout
     const browser = await puppeteer.launch({
-      headless: true,
-      devtools: false,
-      args: minimal_args
+      headless: false,
+      devtools: true,
+      args: minimal_args,
     })
 
     const page = await browser.newPage()
