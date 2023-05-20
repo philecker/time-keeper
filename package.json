@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "dotenv": "^16.0.3",
-    "puppeteer": "^20.2.0"
+    "dotenv": "16.0.3",
+    "puppeteer": "16.2.0"
   },
   "name": "time-keeper",
   "version": "1.0.0",

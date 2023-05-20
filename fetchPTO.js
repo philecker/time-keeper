@@ -1,6 +1,8 @@
 const puppeteer = require('puppeteer');
 // const Store = require('electron-store');
 
+const delay = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+
 (async () => {
   try {
     // Define .env variables
@@ -46,8 +48,8 @@ const puppeteer = require('puppeteer');
 
     // Open new browswer and set timeout
     const browser = await puppeteer.launch({
-      headless: false,
-      devtools: true,
+      headless: "new",
+      devtools: false,
       args: minimal_args,
     })
 
@@ -67,27 +69,33 @@ const puppeteer = require('puppeteer');
 
     // await navigating to Leave Status page
 
+
     // Wait for
+    await delay(3000);
     const goToLbl = '#goToLbl';
     await page.waitForSelector(goToLbl);
     await page.click(goToLbl);
 
     // Wait for
+    await delay(3000);
     const bus__PE = '#bus__PE';
     await page.waitForSelector(bus__PE);
     await page.click(bus__PE);
 
     // Wait for
+    await delay(3000);
     const dpt__ES = '#dpt__ES';
     await page.waitForSelector(dpt__ES);
     await page.click(dpt__ES);
 
     // Wait for
+    await delay(3000);
     const wrk__PayrollandBenefits = '#wrk__PayrollandBenefits';
     await page.waitForSelector(wrk__PayrollandBenefits);
     await page.click(wrk__PayrollandBenefits);
 
     // Wait for
+    await delay(3000);
     const actvty__ESQLVSTAT = '#actvty__ESQLVSTAT';
     await page.waitForSelector(actvty__ESQLVSTAT);
     await page.click(actvty__ESQLVSTAT);
