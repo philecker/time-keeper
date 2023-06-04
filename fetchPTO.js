@@ -71,31 +71,31 @@ const delay = (milliseconds) => new Promise((resolve) => setTimeout(resolve, mil
 
 
     // Wait for
-    await delay(3000);
+    await delay(5000);
     const goToLbl = '#goToLbl';
     await page.waitForSelector(goToLbl);
     await page.click(goToLbl);
 
     // Wait for
-    await delay(3000);
+    await delay(5000);
     const bus__PE = '#bus__PE';
     await page.waitForSelector(bus__PE);
     await page.click(bus__PE);
 
     // Wait for
-    await delay(3000);
+    await delay(5000);
     const dpt__ES = '#dpt__ES';
     await page.waitForSelector(dpt__ES);
     await page.click(dpt__ES);
 
     // Wait for
-    await delay(3000);
+    await delay(5000);
     const wrk__PayrollandBenefits = '#wrk__PayrollandBenefits';
     await page.waitForSelector(wrk__PayrollandBenefits);
     await page.click(wrk__PayrollandBenefits);
 
     // Wait for
-    await delay(3000);
+    await delay(5000);
     const actvty__ESQLVSTAT = '#actvty__ESQLVSTAT';
     await page.waitForSelector(actvty__ESQLVSTAT);
     await page.click(actvty__ESQLVSTAT);
